@@ -15,15 +15,6 @@ module.exports = function(grunt) {
       }
     },
 
-    autoprefixer: { // https://github.com/nDmitry/grunt-autoprefixer
-      options: {
-        browsers: ['last 2 versions', 'bb 10']
-      },
-      no_dest: {
-        src: 'animate.css' // output file
-      }
-    },
-
     cssmin: {
       minify: {
         src: ['animate.css'],
@@ -73,7 +64,7 @@ module.exports = function(grunt) {
 
   // register task
   grunt.registerTask('concat-anim', 'Concatenates activated animations', concatAnim); // custom task
-  grunt.registerTask('default', ['concat-anim', 'autoprefixer', 'cssmin']);
+  grunt.registerTask('default', ['concat-anim', 'cssmin']);
   grunt.registerTask('dev', ['watch']);
 
 };
